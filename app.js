@@ -1,5 +1,9 @@
 require('app-module-path').addPath(__dirname);
 
-const httpServer = require('api/server.js');
+const httpServer = require('api');
+const peripheral = require('peripheral');
 
-httpServer.start()
+peripheral.advertise();
+httpServer.start((service, characteristic, value) => {
+    peripheral.process(service, characteristic, value);
+});

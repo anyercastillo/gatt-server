@@ -1,4 +1,11 @@
 # gatt-server
+A simple Gatt Server to speed up the testing for developers.
+
+**Usage:**
+```shell
+sudo node app.js
+```
+Use the http server to send commands to the device.
 
 ## Configure Raspberry Pi
 
