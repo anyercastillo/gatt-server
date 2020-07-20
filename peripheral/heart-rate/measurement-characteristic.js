@@ -5,7 +5,7 @@ const Characteristic = bleno.Characteristic;
 function MeasurementCharacteristic() {
     MeasurementCharacteristic.super_.call(this, {
         uuid: '2A37',
-        properties: ['read', 'notify'],
+        properties: ['notify'],
         descriptors: []
     });
 
@@ -25,12 +25,6 @@ MeasurementCharacteristic.prototype.onUnsubscribe = function () {
     console.log('EchoCharacteristic - onUnsubscribe');
 
     this._updateValueCallback = null;
-};
-
-MeasurementCharacteristic.prototype.onNotify = function (maxValueSize, updateValueCallback) {
-    console.log('EchoCharacteristic - onNotify');
-
-    this._updateValueCallback = updateValueCallback;
 };
 
 MeasurementCharacteristic.prototype.updateValue = function (value) {

@@ -4,7 +4,7 @@ const heartRateService = new HeartRateService();
 
 function advertise() {
     bleno.on('stateChange', function (state) {
-        console.log('on -> stateChange: ' + state + ' heartRateService.uuid=' + heartRateService.uuid);
+        console.log('on -> stateChange: ' + state);
 
         if (state === 'poweredOn') {
             bleno.startAdvertising('Mock Device', [heartRateService.uuid]);
