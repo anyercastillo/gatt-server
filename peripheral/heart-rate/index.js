@@ -20,8 +20,14 @@ function HeartRateService() {
 util.inherits(HeartRateService, BlenoPrimaryService);
 
 HeartRateService.prototype.process = function (characteristic, value) {
-    if (characteristic.toUpperCase() === measurementCharacteristic.uuid.toUpperCase()) {
-        measurementCharacteristic.updateValue(value);
+    switch (characteristic.toUpperCase()) {
+        case measurementCharacteristic.uuid.toUpperCase():
+            measurementCharacteristic.updateValue(value);
+            break;
+
+        case bodySensorLocationCharacteristic.uuid.toUpperCase():
+            bodySensorLocationCharacteristic.updateValue(value);
+            break;
     }
 };
 

@@ -8,13 +8,21 @@ function BodySensorLocationCharacteristic() {
         properties: ['read'],
         descriptors: []
     });
+
+    this._value = new Buffer([0]);
 };
 
 util.inherits(BodySensorLocationCharacteristic, Characteristic);
 
 BodySensorLocationCharacteristic.prototype.onReadRequest = function (offset, callback) {
-    const HAND = 4;
-    callback(this.RESULT_SUCCESS, new Buffer([HAND]));
+    callback(this.RESULT_SUCCESS, this._value);
 };
+
+BodySensorLocationCharacteristic.prototype.updateValue = function (value) {
+    console.log('EchoCharacteristic - updateValue: ' + value);
+
+    this._value = new Buffer([value]);
+}
+
 
 module.exports = BodySensorLocationCharacteristic;
