@@ -20,8 +20,10 @@ https://phoenixnap.com/kb/enable-ssh-raspberry-pi
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 ## Install Node V4.0.0
+```shell
 nvm install v4.0.0
 nvm alias default v4.0.0
+```
 
 ## Configure the development environment
 
