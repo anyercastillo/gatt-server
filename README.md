@@ -25,7 +25,7 @@ nvm install v4.0.0
 nvm alias default v4.0.0
 ```
 
-## Configure the development environment
+## Configure the development environment 
 
 ### Setup VSCode for Remote Development using SSH
 https://code.visualstudio.com/docs/remote/ssh
